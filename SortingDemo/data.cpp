@@ -1,9 +1,20 @@
 #include "data.h"
+#include "variables.h"
 
-void getData(std::vector<std::string> tokens)
+void printData(std::vector<int> intVector, std::string intVectorName)
 {
-	std::vector<int> intVector;
-	for (int i = 1; i < tokens.size(); i++)
+	std::cout << "Unsorted " << intVectorName << " integer vector: ";
+	for (int i = 0; i < userData.size(); i++)
+	{
+		std::cout << userData[i] << " ";
+	}
+	std::cout << '\n';
+}
+
+void getUserData(std::vector<std::string> tokens)
+{
+	userData.clear();
+	for (int i = 2; i < tokens.size(); i++)
 	{
 		int element;
 		try {
@@ -11,21 +22,19 @@ void getData(std::vector<std::string> tokens)
 		}
 		catch (std::invalid_argument)
 		{
-			std::cout << "Invalid integer for element " << i << ".\n";
-			//return 1;
+			std::cout << "Invalid integer for element " << i + 1 << ".\n";
+			userData.clear();
+			return;
 		}
 		catch (std::out_of_range)
 		{
-			std::cout << "Invalid integer for element " << i << ": out of range.\n";
-			//return 1;
+			std::cout << "Invalid integer for element " << i + 1 << ": out of range.\n";
+			userData.clear();
+			return;
 		}
 
-		intVector.push_back(element);
+		userData.push_back(element);
 	}
 
-	for (int i = 0; i < intVector.size(); i++)
-	{
-		std::cout << intVector[i] << " ";
-	}
-	std::cout << '\n';
+	printData(userData, "user");
 }

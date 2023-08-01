@@ -1,32 +1,51 @@
 #include "exchangeSorts.h"
+#include "variables.h"
 
-void bubbleSort(std::vector<int> test, bool isAscending)
+void bubbleSort(std::string variableType, bool isAscending)
 {
+	std::vector<int> intVector;
+	if (variableType == "default")
+	{
+		intVector = defaultData;
+	}
+	else if (variableType == "user")
+	{
+		if (userData.empty())
+		{
+			std::cout << "User data is empty.\n";
+			return;
+		}
+		else
+		{
+			intVector = userData;
+		}
+	}
+
 	int swapCount;
 	int iterationCount = 0;
 	do {
 		swapCount = 0;
-		for (int i = 0; i < test.size() - 1; i++)
+		for (int i = 0; i < intVector.size() - 1; i++)
 		{
 			int temp;
 			if (isAscending == true)
 			{
-				if (test[i] > test[i + 1])
+				if (intVector[i] > intVector[i + 1])
 				{
 					++swapCount;
-					temp = test[i];
-					test[i] = test[i + 1];
-					test[i + 1] = temp;
+					temp = intVector[i];
+					intVector[i] = intVector[i + 1];
+					intVector[i + 1] = temp;
 				}
 			}
 			else
 			{
-				if (test[i] < test[i + 1])
+				if (intVector[i] < intVector[i + 1])
 				{
 					++swapCount;
-					temp = test[i];
-					test[i] = test[i + 1];
-					test[i + 1] = temp;
+					temp = intVector[i];
+					intVector[i] = intVector[i + 1];
+					intVector[i + 1] = temp;
 				}
 			}
 		}
@@ -38,9 +57,9 @@ void bubbleSort(std::vector<int> test, bool isAscending)
 	} while (swapCount != 0);
 	std::cout << "iterationCount: " << iterationCount << '\n';
 
-	for (int i = 0; i < test.size(); i++)
+	for (int i = 0; i < intVector.size(); i++)
 	{
-		std::cout << test[i] << " ";
+		std::cout << intVector[i] << " ";
 	}
 	std::cout << '\n';
 }

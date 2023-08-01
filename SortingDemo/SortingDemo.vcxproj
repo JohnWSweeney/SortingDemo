@@ -128,17 +128,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="commands.cpp" />
     <ClCompile Include="data.cpp" />
     <ClCompile Include="exchangeSorts.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="start.cpp" />
+    <ClCompile Include="variables.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="commands.h" />
     <ClInclude Include="data.h" />
     <ClInclude Include="exchangeSorts.h" />
-    <ClInclude Include="Header.h" />
     <ClInclude Include="start.h" />
-    <ClInclude Include="test.h" />
+    <ClInclude Include="variables.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />

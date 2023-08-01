@@ -2,8 +2,7 @@
 
 int main()
 {
-	std::cout << "sortingDemo v0.0.0\n\n";
-
+	std::cout << "sortingDemo v0.0.2\n\n";
 	bool running = true;
 	while (running)
 	{

@@ -2,4 +2,4 @@
 #include <iostream>
 #include <vector>
 
-void bubbleSort(std::vector<int> test, bool isAscending);
+void bubbleSort(std::string variableType, bool isAscending);

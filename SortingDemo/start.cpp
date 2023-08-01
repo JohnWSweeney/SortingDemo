@@ -1,7 +1,8 @@
 #include "start.h"
+#include "commands.h"
 #include "data.h"
 #include "exchangeSorts.h"
-#include "test.h"
+#include "variables.h"
 
 void getCommands(std::vector<std::string> &tokens)
 {
@@ -21,13 +22,23 @@ void startMenu(bool &running)
 	std::vector<std::string> tokens;
 	getCommands(tokens);
 
-	if (tokens[0] == "bubble")
+	cmd cmd;
+	int result = populateCmd(tokens, cmd);
+	if (result != 0)
 	{
-		bubbleSort(asdf, true);
+		return;
 	}
-	else if (tokens[0] == "data")
+
+	if (cmd.functionType == "bubble")
 	{
-		getData(tokens);
+		bubbleSort(cmd.variableType, cmd.isAscending);
+	}
+	else if (cmd.functionType == "data")
+	{
+		if (cmd.variableType == "user")
+		{
+			getUserData(tokens);
+		}
 	}
 	else if (tokens[0] == "exit")
 	{

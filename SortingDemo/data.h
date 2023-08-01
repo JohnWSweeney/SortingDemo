@@ -3,4 +3,4 @@
 #include <vector>
 #include <string>
 
-void getData(std::vector<std::string> tokens);
+void getUserData(std::vector<std::string> tokens);
