@@ -132,15 +132,15 @@
     <ClCompile Include="data.cpp" />
     <ClCompile Include="exchangeSorts.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="random.cpp" />
     <ClCompile Include="start.cpp" />
-    <ClCompile Include="variables.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="commands.h" />
     <ClInclude Include="data.h" />
     <ClInclude Include="exchangeSorts.h" />
+    <ClInclude Include="random.h" />
     <ClInclude Include="start.h" />
-    <ClInclude Include="variables.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />

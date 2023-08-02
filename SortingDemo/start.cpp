@@ -2,7 +2,6 @@
 #include "commands.h"
 #include "data.h"
 #include "exchangeSorts.h"
-#include "variables.h"
 
 void getCommands(std::vector<std::string> &tokens)
 {
@@ -38,6 +37,10 @@ void startMenu(bool &running)
 		if (cmd.variableType == "user")
 		{
 			getUserData(tokens);
+		}
+		else if (cmd.variableType == "random")
+		{
+			getRandomData(cmd.size, cmd.min, cmd.max);
 		}
 	}
 	else if (tokens[0] == "exit")

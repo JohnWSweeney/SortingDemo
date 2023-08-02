@@ -1,24 +1,13 @@
 #include "exchangeSorts.h"
-#include "variables.h"
+#include "data.h"
 
 void bubbleSort(std::string variableType, bool isAscending)
 {
 	std::vector<int> intVector;
-	if (variableType == "default")
+	int result = checkCopyVariable(variableType, intVector);
+	if (result != 0)
 	{
-		intVector = defaultData;
-	}
-	else if (variableType == "user")
-	{
-		if (userData.empty())
-		{
-			std::cout << "User data is empty.\n";
-			return;
-		}
-		else
-		{
-			intVector = userData;
-		}
+		return;
 	}
 
 	int swapCount;

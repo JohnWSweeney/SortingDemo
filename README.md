@@ -14,7 +14,14 @@ The app opens a console window on startup. Enter the `command` keywords separate
 > `bubble variableType direction`
 
 ## ChangeLog
-v0.0.2
+v0.0.3
+- Added random class.
+	- Generates random numbers with 32-bit Mersenne Twister within user specified distribution.
+- Merged variables.h/cpp with data.h/cpp.
+	- Added getRandomData to populate a vector with	
+	- Added checkCopyVariable to prevent calls to sort function on empty vector.
+
+- v0.0.2
 - Added commands.h/cpp and supporting functions to sort user input commands.
 	- Resulting command struct (cmd) is used to call functions, passes parameters via startMenu function.
 - Added getUserData function to data.h/.cpp to accept unsorted user data.

@@ -1,7 +1,7 @@
 #include "commands.h"
 
 std::vector<std::string> functionTypes = { "data", "bubble", "exit" };
-std::vector<std::string> variableTypes = { "default", "user" };
+std::vector<std::string> variableTypes = { "default", "user", "random" };
 
 int checkFunctionType(std::string token, std::string &functionType)
 {
@@ -37,7 +37,7 @@ int getInteger(std::string token, bool isSigned, int &integer, std::string intNa
 {
 	try {
 		integer = std::stoi(token);
-		if (isSigned == true)
+		if (isSigned == false)
 		{
 			integer = abs(integer);
 		}
@@ -52,6 +52,31 @@ int getInteger(std::string token, bool isSigned, int &integer, std::string intNa
 	{
 		std::cout << "Invalid integer for " << intName << ": out of range.\n";
 		return 1;
+	}
+}
+
+int getRandomParameters(std::vector<std::string> tokens, int &size, int &min, int &max)
+{
+	int result = getInteger(tokens[2], false, size, "random vector size");
+	if (result != 0)
+	{
+		return 1;
+	}
+
+	result = getInteger(tokens[3], true, min, "random vector minimum");
+	if (result != 0)
+	{
+		return 1;
+	}
+
+	result = getInteger(tokens[4], true, max, "random vector maximum");
+	if (result != 0)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
 	}
 }
 
@@ -95,7 +120,33 @@ int populateCmd(std::vector<std::string> tokens, cmd &cmd)
 			return 1;
 		}
 
-		if (cmd.functionType != "data")
+		if (cmd.functionType == "data")
+		{
+			if (cmd.variableType == "random")
+			{
+				if (tokens.size() < 5)
+				{
+					std::cout << "Too few commands for random data.\n";
+				}
+				else
+				{
+					result = getRandomParameters(tokens, cmd.size, cmd.min, cmd.max);
+					if (result != 0)
+					{
+						return 1;
+					}
+					else
+					{
+						return 0;
+					}
+				}
+			}
+			else
+			{
+				return 0;
+			}
+		}
+		else
 		{
 			result = getDirection(tokens[2], cmd.isAscending);
 			if (result != 0)
@@ -106,11 +157,6 @@ int populateCmd(std::vector<std::string> tokens, cmd &cmd)
 			{
 				return 0;
 			}
-		}
-		else
-		{
-			return 0;
-		}
-		
+		}	
 	}
 }
