@@ -2,6 +2,7 @@
 #include "commands.h"
 #include "data.h"
 #include "exchangeSorts.h"
+#include "selectionSorts.h"
 
 void getCommands(std::vector<std::string> &tokens)
 {
@@ -27,11 +28,16 @@ void startMenu(bool &running)
 	{
 		return;
 	}
-
+	// sort functions.
 	if (cmd.functionType == "bubble")
 	{
 		bubbleSort(cmd.variableType, cmd.isAscending);
 	}
+	else if (cmd.functionType == "selection")
+	{
+		selectionSort(cmd.variableType, cmd.isAscending);
+	}
+	// data functions.
 	else if (cmd.functionType == "data")
 	{
 		if (cmd.variableType == "user")

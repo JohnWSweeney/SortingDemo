@@ -133,6 +133,7 @@
     <ClCompile Include="exchangeSorts.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="random.cpp" />
+    <ClCompile Include="selectionSorts.cpp" />
     <ClCompile Include="start.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +141,7 @@
     <ClInclude Include="data.h" />
     <ClInclude Include="exchangeSorts.h" />
     <ClInclude Include="random.h" />
+    <ClInclude Include="selectionSorts.h" />
     <ClInclude Include="start.h" />
   </ItemGroup>
   <ItemGroup>

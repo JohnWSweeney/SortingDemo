@@ -46,9 +46,5 @@ void bubbleSort(std::string variableType, bool isAscending)
 	} while (swapCount != 0);
 	std::cout << "iterationCount: " << iterationCount << '\n';
 
-	for (int i = 0; i < intVector.size(); i++)
-	{
-		std::cout << intVector[i] << " ";
-	}
-	std::cout << '\n';
+	printData(intVector, "Bubble sorted");
 }

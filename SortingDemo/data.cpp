@@ -7,7 +7,7 @@ std::vector<int> randomData;
 
 void printData(std::vector<int> intVector, std::string intVectorName)
 {
-	std::cout << "Unsorted " << intVectorName << " integer vector: ";
+	std::cout << intVectorName << " integer vector: ";
 	for (int i = 0; i < intVector.size(); i++)
 	{
 		std::cout << intVector[i] << " ";
@@ -73,8 +73,7 @@ void getUserData(std::vector<std::string> tokens)
 		}
 		userData.push_back(element);
 	}
-
-	printData(userData, "user");
+	printData(userData, "User unsorted");
 }
 
 void getRandomData(int size, int min, int max)
@@ -87,5 +86,5 @@ void getRandomData(int size, int min, int max)
 		int integer = random.getNum(min, max);
 		randomData.push_back(integer);
 	}
-	printData(randomData, "random");
+	printData(randomData, "Random unsorted");
 }
