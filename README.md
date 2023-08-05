@@ -13,11 +13,17 @@ The app opens a console window on startup. Enter the `command` keywords separate
 ### Bubble Sort
 > `bubble variableType direction`
 
+### Cocktail Shaker Sort
+> `cocktail variableType direction`
+
 ## Selection Sorts
 ### Selection Sort
 > `selection variableType direction`
 
 ## ChangeLog
+v0.0.5
+- Added cocktailShakerSort algorithmn function to exchangeSorts.h/cpp.
+
 v0.0.4
 - Added selectionSorts.h/cpp.
 	- Added selectionSort algorithmn function.

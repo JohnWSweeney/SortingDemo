@@ -3,3 +3,4 @@
 #include <vector>
 
 void bubbleSort(std::string variableType, bool isAscending);
+void cocktailShakerSort(std::string variableType, bool isAscending);

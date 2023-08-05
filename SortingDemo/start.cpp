@@ -33,6 +33,10 @@ void startMenu(bool &running)
 	{
 		bubbleSort(cmd.variableType, cmd.isAscending);
 	}
+	else if (cmd.functionType == "cocktail")
+	{
+		cocktailShakerSort(cmd.variableType, cmd.isAscending);
+	}
 	else if (cmd.functionType == "selection")
 	{
 		selectionSort(cmd.variableType, cmd.isAscending);
