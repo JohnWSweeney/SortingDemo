@@ -5,7 +5,7 @@ std::vector<int> defaultData = { 1,7,3,9,2,4,6,8,5,0 };
 std::vector<int> userData;
 std::vector<int> randomData;
 
-void printData(std::vector<int> intVector, std::string intVectorName)
+void printVector(std::vector<int> intVector, std::string intVectorName)
 {
 	std::cout << intVectorName << " integer vector: ";
 	for (int i = 0; i < intVector.size(); i++)
@@ -13,6 +13,11 @@ void printData(std::vector<int> intVector, std::string intVectorName)
 		std::cout << intVector[i] << " ";
 	}
 	std::cout << '\n';
+}
+
+void printPerformanceResults(int swapCount, int sweepCount)
+{
+	std::cout << "swapCount: " << swapCount << '\t' << "sweepCount: " << sweepCount << '\n';
 }
 
 int checkCopyVariable(std::string variableType, std::vector<int> &intVector)
@@ -73,7 +78,7 @@ void getUserData(std::vector<std::string> tokens)
 		}
 		userData.push_back(element);
 	}
-	printData(userData, "User unsorted");
+	printVector(userData, "User unsorted");
 }
 
 void getRandomData(int size, int min, int max)
@@ -86,5 +91,5 @@ void getRandomData(int size, int min, int max)
 		int integer = random.getNum(min, max);
 		randomData.push_back(integer);
 	}
-	printData(randomData, "Random unsorted");
+	printVector(randomData, "Random unsorted");
 }

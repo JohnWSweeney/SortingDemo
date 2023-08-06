@@ -38,5 +38,5 @@ void selectionSort(std::string variableType, bool isAscending)
 		resultIndex = sortedIndex;
 	} while (sortedIndex < intVector.size());
 
-	printData(intVector, "Selection sorted");
+	printVector(intVector, "Selection sorted");
 }

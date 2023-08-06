@@ -10,10 +10,11 @@ void bubbleSort(std::string variableType, bool isAscending)
 		return;
 	}
 
-	int swapCount;
-	int iterationCount = 0;
+	int swaps = 0;
+	int swapCount = 0;
+	int sweepCount = 0;
 	do {
-		swapCount = 0;
+		swaps = 0;
 		for (int i = 0; i < intVector.size() - 1; i++)
 		{
 			int temp;
@@ -21,32 +22,29 @@ void bubbleSort(std::string variableType, bool isAscending)
 			{
 				if (intVector[i] > intVector[i + 1])
 				{
-					++swapCount;
 					temp = intVector[i];
 					intVector[i] = intVector[i + 1];
 					intVector[i + 1] = temp;
+					++swaps;
 				}
 			}
 			else
 			{
 				if (intVector[i] < intVector[i + 1])
 				{
-					++swapCount;
 					temp = intVector[i];
 					intVector[i] = intVector[i + 1];
 					intVector[i + 1] = temp;
+					++swaps;
 				}
 			}
 		}
-		std::cout << "swapCount: " << swapCount << '\n';
-		if (swapCount > 0)
-		{
-			++iterationCount;
-		}
-	} while (swapCount != 0);
-	std::cout << "iterationCount: " << iterationCount << '\n';
+		++sweepCount;
+		swapCount = swapCount + swaps;
+	} while (swaps != 0);
 
-	printData(intVector, "Bubble sorted");
+	printVector(intVector, "Bubble sorted");
+	printPerformanceResults(swapCount, sweepCount);
 }
 
 void cocktailShakerSort(std::string variableType, bool isAscending)
@@ -119,8 +117,64 @@ void cocktailShakerSort(std::string variableType, bool isAscending)
 		}
 		++sweepCount;
 		swapCount = swapCount + swaps;
-		
 	} while (swapCount != 0);
 
-	printData(intVector, "Cocktail shaker sorted");
+	printVector(intVector, "Cocktail shaker sorted");
+	printPerformanceResults(swapCount, sweepCount);
+}
+
+void combSort(std::string variableType, bool isAscending)
+{
+	std::vector<int> intVector;
+	int result = checkCopyVariable(variableType, intVector);
+	if (result != 0)
+	{
+		return;
+	}
+
+	float shrinkFactor = 1.3;
+	int step = 0;
+	int k = 1;
+	int leftIndex, rightIndex;
+	int swaps = 0;
+	int swapCount = 0;
+	int sweepCount = 0;
+
+	do {
+		step = intVector.size() / pow(shrinkFactor, k);
+		leftIndex = 0;
+		rightIndex = step;
+		do {
+			swaps = 0;
+			int temp;
+			if (isAscending == true)
+			{
+				if (intVector[leftIndex] > intVector[rightIndex]) // sort ascending.
+				{
+					temp = intVector[leftIndex];
+					intVector[leftIndex] = intVector[rightIndex];
+					intVector[rightIndex] = temp;
+					++swaps;
+				}
+			}
+			else
+			{
+				if (intVector[leftIndex] < intVector[rightIndex]) // sort descending.
+				{
+					temp = intVector[leftIndex];
+					intVector[leftIndex] = intVector[rightIndex];
+					intVector[rightIndex] = temp;
+					++swaps;
+				}
+			}
+			++leftIndex;
+			++rightIndex;
+			swapCount = swapCount + swaps;
+		} while (rightIndex < intVector.size());
+		++sweepCount;
+		++k;
+
+	} while (step > 1);
+	printVector(intVector, "Comb sorted");
+	printPerformanceResults(swapCount, sweepCount);
 }

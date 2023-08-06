@@ -1,6 +1,6 @@
 #include "commands.h"
 
-std::vector<std::string> functionTypes = { "data", "bubble", "cocktail", "selection", "exit" };
+std::vector<std::string> functionTypes = { "data", "bubble", "cocktail", "comb", "selection", "exit" };
 std::vector<std::string> variableTypes = { "default", "user", "random" };
 
 int checkFunctionType(std::string token, std::string &functionType)

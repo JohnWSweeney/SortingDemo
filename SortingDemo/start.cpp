@@ -37,6 +37,10 @@ void startMenu(bool &running)
 	{
 		cocktailShakerSort(cmd.variableType, cmd.isAscending);
 	}
+	else if (cmd.functionType == "comb")
+	{
+		combSort(cmd.variableType, cmd.isAscending);
+	}
 	else if (cmd.functionType == "selection")
 	{
 		selectionSort(cmd.variableType, cmd.isAscending);
