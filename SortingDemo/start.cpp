@@ -3,6 +3,7 @@
 #include "data.h"
 #include "exchangeSorts.h"
 #include "selectionSorts.h"
+#include "insertionSorts.h"
 
 void getCommands(std::vector<std::string> &tokens)
 {
@@ -44,6 +45,10 @@ void startMenu(bool &running)
 	else if (cmd.functionType == "selection")
 	{
 		selectionSort(cmd.variableType, cmd.isAscending);
+	}
+	else if (cmd.functionType == "insertion")
+	{
+		insertionSort(cmd.variableType, cmd.isAscending);
 	}
 	// data functions.
 	else if (cmd.functionType == "data")

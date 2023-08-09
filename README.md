@@ -23,8 +23,16 @@ The app opens a console window on startup. Enter the `command` keywords separate
 ### Selection Sort
 > `selection variableType direction`
 
+## Insertion Sorts
+### Insertion Sort
+> `insertion variableType direction`
+
 ## ChangeLog
-v0.0.6
+v0.0.7
+- Added insertionSorts.h/cpp.
+	- Added insertionSort algorithmn function.
+
+- v0.0.6
 - Added combSort algorithmn fucntion to exchangeSorts.h/cpp. 
 - Renamed printData to printVector in data.h/cpp.
 

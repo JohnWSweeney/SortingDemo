@@ -131,6 +131,7 @@
     <ClCompile Include="commands.cpp" />
     <ClCompile Include="data.cpp" />
     <ClCompile Include="exchangeSorts.cpp" />
+    <ClCompile Include="insertionSorts.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="random.cpp" />
     <ClCompile Include="selectionSorts.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="commands.h" />
     <ClInclude Include="data.h" />
     <ClInclude Include="exchangeSorts.h" />
+    <ClInclude Include="insertionSorts.h" />
     <ClInclude Include="random.h" />
     <ClInclude Include="selectionSorts.h" />
     <ClInclude Include="start.h" />
