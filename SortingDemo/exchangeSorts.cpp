@@ -178,3 +178,41 @@ void combSort(std::string variableType, bool isAscending)
 	printVector(intVector, "Comb sorted");
 	printPerformanceResults(swapCount, sweepCount);
 }
+
+void evenOddSort(std::string variableType, bool isAscending)
+{
+	std::vector<int> intVector;
+	int result = checkCopyVariable(variableType, intVector);
+	if (result != 0)
+	{
+		return;
+	}
+
+	int swaps = 0;
+	int swapCount = 0;
+	int sweepCount = 0;
+	do {
+		swaps = 0;
+		for (int i = 0; i < intVector.size() - 1; i += 2) // odd pairs.
+		{
+			if (intVector[i] > intVector[i + 1])
+			{
+				swap(intVector, i, i + 1);
+				++swaps;
+			}
+		}
+
+		for (int i = 1; i < intVector.size() - 2; i += 2) // even pairs.
+		{
+			if (intVector[i] > intVector[i + 1])
+			{
+				swap(intVector, i, i + 1);
+				++swaps;
+			}
+		}
+		++sweepCount;
+		swapCount = swapCount + swaps;
+	} while (swaps != 0);
+	printVector(intVector, "Even-odd sorted");
+	printPerformanceResults(swapCount, sweepCount);
+}

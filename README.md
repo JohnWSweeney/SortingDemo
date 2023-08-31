@@ -5,9 +5,15 @@ A console app exploring sorting algorithms.
 ## Functions
 The app opens a console window on startup. Enter the `command` keywords separated by a space. Commands are case-sensitive.
 
-## Custom Data
+## Data
+Data to sort.
+### Default Data
+
 ### User Data
 > `data user x0 x1 x2 ...`
+
+### Random Data
+> `data random numInt minInt maxInt`
 
 ## Exchange Sorts
 ### Bubble Sort
@@ -15,6 +21,9 @@ The app opens a console window on startup. Enter the `command` keywords separate
 
 ### Cocktail Shaker Sort
 > `cocktail variableType direction`
+
+### Even-Odd Sort
+> `evenOdd variableType direction`
 
 ### Comb Sort
 > `comb variableType direction`
@@ -28,12 +37,15 @@ The app opens a console window on startup. Enter the `command` keywords separate
 > `insertion variableType direction`
 
 ## ChangeLog
+0.0.8
+- Added evenOdd algorithmn function to exchangeSorts.h/cpp. 
+
 v0.0.7
 - Added insertionSorts.h/cpp.
 	- Added insertionSort algorithmn function.
 
-- v0.0.6
-- Added combSort algorithmn fucntion to exchangeSorts.h/cpp. 
+v0.0.6
+- Added combSort algorithmn function to exchangeSorts.h/cpp. 
 - Renamed printData to printVector in data.h/cpp.
 
 v0.0.5

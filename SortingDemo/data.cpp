@@ -15,6 +15,13 @@ void printVector(std::vector<int> intVector, std::string intVectorName)
 	std::cout << '\n';
 }
 
+void swap(std::vector<int> &intVector, int indexA, int indexB)
+{
+	int temp = intVector[indexA];
+	intVector[indexA] = intVector[indexB];
+	intVector[indexB] = temp;
+}
+
 void printPerformanceResults(int swapCount, int sweepCount)
 {
 	std::cout << "swapCount: " << swapCount << '\t' << "sweepCount: " << sweepCount << '\n';
