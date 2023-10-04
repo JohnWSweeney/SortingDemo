@@ -1,43 +1,62 @@
 # sortingDemo
 
-A console app exploring sorting algorithms.
+A console app exploring sorting algorithms, including bubble, cocktail, even-odd, comb, insertion, and quicksort algorithms.
 
 ## Functions
 The app opens a console window on startup. Enter the `command` keywords separated by a space. Commands are case-sensitive.
 
 ## Data
-Data to sort.
-### Default Data
+You can apply sorting algorithms to three types of data vectors: `default`, `user`, and `random`.
 
-### User Data
+The `default` data is a static integer vector containing 1, 7, 3, 9, 2, 4, 6, 8, 5, and 0. You can also input your own data into the `user` vector by entering:
 > `data user x0 x1 x2 ...`
 
-### Random Data
+where `x` is an integer. 
+
+Finally, you can populate the `random` vector with an indefinite number of random integers by entering:
 > `data random numInt minInt maxInt`
+
+where `numInt` is the number of integers you wish to populate the vector with, and `minInt` and `maxInt` are the lower and upper bounds, respectively, from which the random numbers will be selected.
+
+## Using the App
+Apply a sorting algorthm to your chosen data type by entering:
+>`sortName dataType direction`
+
+where `direction`  selects the direction to sort the data: `asc` for ascending or `desc` for descending.
 
 ## Exchange Sorts
 ### Bubble Sort
-> `bubble variableType direction`
+Bubble sort is perhaps the simplest 
+> `bubble dataType direction`
 
 ### Cocktail Shaker Sort
-> `cocktail variableType direction`
+> `cocktail dataType direction`
 
 ### Even-Odd Sort
-> `evenOdd variableType direction`
+> `evenOdd dataType direction`
 
 ### Comb Sort
-> `comb variableType direction`
+> `comb dataType direction`
+
+### Quick Sort
+> `quickSort dataType direction`
 
 ## Selection Sorts
 ### Selection Sort
-> `selection variableType direction`
+> `selection dataType direction`
 
 ## Insertion Sorts
 ### Insertion Sort
-> `insertion variableType direction`
+> `insertion dataType direction`
+
+## Download
+[sortingDemo v1.0.0](https://github.com/JohnWSweeney/sortingDemo/releases/download/v1.0.0/sortingDemo_v1_0_0.exe) [50 kB]
 
 ## ChangeLog
-0.0.8
+v1.0.0
+- Added quickSort to exchangeSorts.
+
+v0.0.8
 - Added evenOdd algorithmn function to exchangeSorts.h/cpp. 
 
 v0.0.7

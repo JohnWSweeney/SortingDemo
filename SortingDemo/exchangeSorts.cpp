@@ -216,3 +216,45 @@ void evenOddSort(std::string variableType, bool isAscending)
 	printVector(intVector, "Even-odd sorted");
 	printPerformanceResults(swapCount, sweepCount);
 }
+
+int partition(std::vector<int> &intVector, int lo, int hi)
+{
+	int pivotIndex = hi;
+	while (lo < hi)
+	{
+		while (intVector[lo] <= intVector[pivotIndex] and lo < hi)
+		{
+			++lo;
+		}
+		while (intVector[hi] > intVector[pivotIndex] and lo < hi)
+		{
+			--hi;
+		}
+		swap(intVector, lo, hi);
+	}
+	swap(intVector, lo, pivotIndex);
+	return lo;
+}
+
+void quickSortRecursion(std::vector<int> &intVector, int lo, int hi)
+{
+	if (lo < hi)
+	{
+		int pivotIndex = partition(intVector, lo, hi);
+		quickSortRecursion(intVector, lo, pivotIndex - 1);
+		quickSortRecursion(intVector, pivotIndex + 1, hi);
+	}
+}
+
+void quickSort(std::string variableType, bool isAscending)
+{
+	std::vector<int> intVector;
+	int result = checkCopyVariable(variableType, intVector);
+	if (result != 0)
+	{
+		return;
+	}
+
+	quickSortRecursion(intVector, 0, intVector.size() - 1);
+	printVector(intVector, "Quick-sort sorted");
+}

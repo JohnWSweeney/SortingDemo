@@ -54,6 +54,10 @@ void startMenu(bool &running)
 	{
 		insertionSort(cmd.variableType, cmd.isAscending);
 	}
+	else if (cmd.functionType == "quickSort")
+	{
+		quickSort(cmd.variableType, cmd.isAscending);
+	}
 	// data functions.
 	else if (cmd.functionType == "data")
 	{
